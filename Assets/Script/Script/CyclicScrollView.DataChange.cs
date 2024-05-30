@@ -8,9 +8,9 @@ namespace Knivt.Tools.UI
     {
 
         /// <summary>
-        /// 刷新界面内对应index的Cell的显示信息
+        /// 刷新界面内对应index的Cell的显示信息,刷新单个
         /// </summary>
-        public void ElementAtDataChange(int index)
+        public void ElementAtDataChangeByIndex(int index)
         {
             if (index < 0 || index >= Datas.Count)
             {
@@ -32,10 +32,11 @@ namespace Knivt.Tools.UI
                 ResetCellData(cell, Datas.ElementAt(index), index);
             }
         }
+
         /// <summary>
         /// 刷新界面内所有cell的显示信息
         /// </summary>
-        public void RefrashViewRangeData()
+        public void RefreshViewRangeData()
         {
             if (viewCellBundles.Count() == 0)
             {
@@ -90,6 +91,7 @@ namespace Knivt.Tools.UI
                 viewCellBundles.RemoveLast();
             }
         }
+
         /// <summary>
         /// 刷新Content的尺寸,当删除元素或者增加元素的时候请调用它
         /// </summary>

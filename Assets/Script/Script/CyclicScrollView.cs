@@ -77,20 +77,17 @@ namespace Knivt.Tools.UI
             }
             _cellRectTransform = _cellObject.GetComponent<RectTransform>();
             Datas = datas;
-            RecalculateContentSize(resetPos);
-            //清除头部和尾部
-            UpdateDisplay();
-            RefrashViewRangeData();
+            RefreshView(false);
         }
         /// <summary>
         /// 刷新一下，数据的长度发生变化的时候使用这个函数
         /// </summary>
-        public void Refrash(bool resetContentPos = false)
+        public void RefreshView(bool resetContentPos = false)
         {
             RecalculateContentSize(resetContentPos);
-            content.anchoredPosition = resetContentPos ? Vector2.zero : content.anchoredPosition;
+            //清除头部和尾部
             UpdateDisplay();
-            RefrashViewRangeData();
+            RefreshViewRangeData();
         }
 
         protected virtual void Update()
